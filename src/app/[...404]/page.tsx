@@ -1,7 +1,7 @@
 export default function NotFound(){
   return (
-    <>
-      404 error
+    <>asd
+      No encontrado
     </>
   );
 }

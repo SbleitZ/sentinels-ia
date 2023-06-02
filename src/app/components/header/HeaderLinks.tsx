@@ -9,16 +9,16 @@ interface routesType {
 }
 const headerRoutes : routesType[] = [
   {
-    text: "acerca de",
-    link: "/about"
-  },
-  {
     text:"Características",
     link:"/caracteristicas"
   },
   {
     text: "Planes y precios",
     link: "/#planes"
+  },
+  {
+    text: "Acerca de",
+    link: "/about"
   },
   {
     text: "Contacto",
@@ -30,18 +30,18 @@ export default function HeaderLinks(){
   const [infoBar, setInfoBar] = useState(false);
   return (
     <>
-<div className={infoBar ? "text-red-200 md:block flex":"hidden md:block flex"}>
-        <ul className="hidden md:flex md:flex-row gap-8 cursor-pointer hover:text-red text-xl bg-transparent backdrop-blur-sm rounded-xl p-4">
+<div className={infoBar ? "md:block flex":"hidden md:block flex"}>
+        <ul className="hidden md:flex md:flex-row gap-8 cursor-pointer text-primaryL dark:text-primaryD text-xl rounded-xl p-4">
               {
               headerRoutes.map((headerLink,i) => (
                 headerLink.text == "Contacto" ? 
                 <li key={`${listHeaderId} - ${i}`}>
-                  <a href={`${headerLink.link}`} className="hover:text-accent">
+                  <a href={`${headerLink.link}`} className="hover:text-importanteL dark:hover:text-importanteD">
                     {headerLink.text}
                   </a>
                 </li>
                 :<li key={`${listHeaderId} - ${i}`}>
-                  <Link href={`${headerLink.link}`} className="hover:text-accent">
+                  <Link href={`${headerLink.link}`} className="hover:text-importanteL dark:hover:text-importanteD">
                     {headerLink.text}
                   </Link>
                 </li>
